@@ -23,8 +23,10 @@ MENU
       case params
       when 1
         @controller.create_gossip
-      when 3
       when 2
+        @controller.index_gossips
+      when 3
+        @controller.destroy_gossip
       when 4
         puts 'You carefully exit the program.'
         break

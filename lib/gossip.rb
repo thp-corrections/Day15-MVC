@@ -15,4 +15,17 @@ class Gossip
       csv << [@author, @content]
     end
   end
+
+  class << self
+    def all
+      CSV.read(DB_PATH)
+    end
+
+    def destroy(id)
+      remaining_gossips = all.each_with_object([]).with_index{ |(gossip, gossips), index| gossips << gossip unless index == id }
+      CSV.open(DB_PATH, 'w') do |csv|
+        remaining_gossips.each{ |gossip| csv << gossip }
+      end
+    end
+  end
 end
