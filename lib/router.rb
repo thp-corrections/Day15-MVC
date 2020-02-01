@@ -22,6 +22,7 @@ MENU
 
       case params
       when 1
+        @controller.create_gossip
       when 3
       when 2
       when 4
