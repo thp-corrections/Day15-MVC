@@ -1,5 +1,4 @@
 require 'csv'
-require 'pry'
 
 class Gossip
   attr_reader :author, :content
